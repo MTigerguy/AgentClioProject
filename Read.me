@@ -1,0 +1,128 @@
+Here’s the complete README.md for your Agent Clio project!
+Since there was a temporary error with the auto-save, simply copy the below text and paste it into a new file named README.md in your ~/Documents/Agents/AgentClioProject/ folder.
+
+⸻
+
+
+# Agent Clio – Document Processing Assistant
+
+**Agent Clio** is a Python desktop application for streamlined legal document management. It lets you split, merge, and organize PDFs (by paper size: Letter, Legal, Other), insert marker pages, auto-name files, and keep an Excel/CSV log—all with a simple GUI.
+
+---
+
+## **Features**
+
+- **Drag-and-drop or select PDF files for processing**
+- **Splits PDFs into Letter, Legal, and Other pages**
+- **Automatically inserts marker pages where legal paper breaks occur**
+- **Merges and splits scanned/printed documents, validating page counts**
+- **Auto-extracts client name and date from document text for smart folder/filename creation**
+- **Saves files in organized, date-stamped subfolders**
+- **Creates and updates an Excel and CSV master log**
+- **Fully offline—no internet required for core processing**
+- **Simple, persistent GUI with “Refresh” for multiple jobs**
+
+---
+
+## **Folder Structure**
+
+Processed and merged documents are saved as:
+
+~/Documents/Agents/AgentClioProject/MAB Law LLC/YYYY-MM-DD/[BaseFilename]/
+[BaseFilename]_Letter.pdf
+[BaseFilename]_Legal.pdf
+[BaseFilename]_Other.pdf
+[BaseFilename]_Full.pdf
+[BaseFilename] Complete and Signed [YYYY-MM-DD] (Merged).pdf
+
+- All files for each job are grouped by date and client/document.
+- Logs are stored in:  
+  `~/Documents/Agents/AgentClioProject/MAB Law LLC/Clio_Log.xlsx`  
+  `~/Documents/Agents/AgentClioProject/MAB Law LLC/Clio_Log.csv`
+
+---
+
+## **Setup**
+
+### 1. **Requirements**
+
+- **Python 3.10+** (tested on Mac)
+- **pip install** the following packages:
+    ```sh
+    pip install PyPDF2 pymupdf openpyxl
+    ```
+    *Tkinter is included with Python on Mac by default.*
+
+### 2. **Folder Setup**
+- Ensure the following path exists (the app will create it if not):  
+  `~/Documents/Agents/AgentClioProject/MAB Law LLC/`
+
+### 3. **Running the App**
+
+In Terminal, navigate to your project folder:
+```sh
+cd ~/Documents/Agents/AgentClioProject/
+python3 clio_app.py
+
+The GUI will launch. From there, you can:
+	•	Select files to process or merge
+	•	View logs
+	•	Refresh file selection for multiple jobs
+
+⸻
+
+How to Use
+
+Processing PDFs
+	1.	Click “Select PDFs” and choose your document(s).
+	2.	Click “Process” to split into Letter/Legal/Other/Full, with smart folder naming.
+	3.	Review status/results in the pop-up window.
+
+Merging/Reconciling PDFs
+	1.	Select your scanned/printed files.
+	2.	Click “Merge” to recombine and save in the matching folder, with a “Complete and Signed” filename.
+
+Refreshing for Next Job
+	•	Click “Refresh” to clear selections and start a new batch.
+
+Viewing the Log
+	•	The app maintains both Excel and CSV logs for all processed and merged actions.
+	•	To view logs, use the built-in Log Viewer (if present), or open the Excel/CSV files directly.
+
+⸻
+
+Troubleshooting
+	•	If the app crashes, an error log is saved at:
+~/Documents/Agents/AgentClioProject/MAB Law LLC/Clio_app_error.log
+	•	Common issues:
+	•	Make sure all required Python packages are installed.
+	•	If filenames or folders aren’t what you expect, check the base filename extraction logic or folder permissions.
+	•	For manual filename entry, follow the prompts for last name and first initial.
+
+⸻
+
+Development Notes
+	•	To change naming, folder, or processing logic, edit clio_app.py—look for functions:
+	•	process_pdfs_individually_with_filelist
+	•	merge_and_split_pdfs_with_filelist
+	•	extract_base_filename
+	•	GUI tweaks are in show_intake_window.
+
+⸻
+
+Extending or Customizing
+	•	You can expand with OCR, bar code, or drag-and-drop later.
+	•	To add new features, follow the project’s modular function structure.
+
+⸻
+
+Contact
+
+For questions or help with this code, reach out to [your email/contact here] or consult the code comments.
+
+⸻
+
+This README is tailored for the Agent Clio workflow as used in a legal/office context on MacOS, but it’s adaptable for other platforms and workflows.
+
+---
+
