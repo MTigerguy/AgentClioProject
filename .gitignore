@@ -1,0 +1,64 @@
+cat > .gitignore << 'EOF'
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# Build / packaging
+build/
+dist/
+*.spec
+
+# Logs & caches
+*.log
+.cache/
+
+# DO NOT TRACK: documents & data
+# Documents
+*.pdf
+*.doc
+*.docx
+*.rtf
+*.odt
+*.txt
+
+# Spreadsheets / data files
+*.xls
+*.xlsx
+*.ods
+*.csv
+*.tsv
+
+# Presentations
+*.ppt
+*.pptx
+*.odp
+
+# Apple iWork
+*.pages
+*.numbers
+*.key
+
+# Archives (often contain docs/data)
+*.zip
+*.7z
+*.tar
+*.gz
+*.rar
+
+# Project-specific: keep outputs local only
+data/
+samples/
+inputs/
+outputs/
+scans/
+exports/
+EOFøø
